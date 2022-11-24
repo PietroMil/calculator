@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Operators } from './components/calculator';
+import InputRow from './modules/InputRow';
 
 function App() {
   const data= {
@@ -25,22 +26,7 @@ const myNumbers = [data, data2, data3 ]
 Operators(myNumbers)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <InputRow />
   );
 }
 
