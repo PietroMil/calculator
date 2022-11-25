@@ -43,10 +43,11 @@ function InputRow() {
 
   console.log(row);
   return (
-    <>
+    <div className="box">
+      <div className="result">{resultView}</div>
       <button onClick={() => handleAdd()}>Add</button>
       {row.map((row, index) => (
-        <div key={index}>
+        <div key={index} className="child-box">
           <select
             onChange={(e) => handleSymbol(index, e.target.value)}
             defaultValue={"-"}
@@ -66,13 +67,19 @@ function InputRow() {
           >
             Delete
           </button>
-          <button onClick={() => handleDisabled(index)}>
-            {row.active ? "disable" : "enable"}
+          <button
+            style={
+              row.active
+                ? { backgroundColor: "green" }
+                : { backgroundColor: "red" }
+            }
+            onClick={() => handleDisabled(index)}
+          >
+            {row.active ? "ABLED" : "DISABLED"}
           </button>
         </div>
       ))}
-      <div>{resultView}</div>
-    </>
+    </div>
   );
 }
 
